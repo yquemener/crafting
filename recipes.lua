@@ -2233,6 +2233,7 @@ crafting.register_recipe({type = "inv",output = "xpanes:wood_frame_flat 16",item
 },always_known = true})
 ]]--
 
+-- Wood basics
 crafting.register_recipe({type = "inv",output = "default:stick 4",items = {
 	"group:wood 1"
 },always_known = true})
@@ -2241,17 +2242,44 @@ crafting.register_recipe({type = "inv",output = "default:wood 4",items = {
 	"default:tree 1"
 },always_known = true})
 
-crafting.register_recipe({type = "inv",output = "default:axe_wood",items = {
-	"group:stick 2",
-	"group:wood 3"
-},always_known = true})
 
-crafting.register_recipe({type = "inv",output = "default:shovel_wood",items = {
-	"group:stick 2",
-	"group:wood 1"
+-- Wood structures
+crafting.register_recipe({type = "inv",output = "xpanes:wood_frame_flat 16",items = {
+	"group:stick 5",
+	"group:wood 4"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "doors:door_wood",items = {
+	"group:wood 6"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "stairs:stair_wood 8",items = {
+	"default:wood 6"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "default:ladder_wood 5",items = {
+	"group:stick 7"
 },always_known = false})
 
-crafting.register_recipe({type = "inv",output = "default:pick_wood",items = {
+-- Stone structures
+crafting.register_recipe({type = "inv",output = "stairs:stair_cobble 8",items = {
+	"default:cobble 6"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "default:cobble",items = {
+	"stairs:slab_cobble 2"
+},always_known = false})
+
+-- Tools
+crafting.register_recipe({type = "inv",output = "default:axe_stone",items = {
 	"group:stick 2",
-	"group:wood 3"
+	"group:stone 3"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "default:shovel_stone",items = {
+	"group:stick 2",
+	"group:stone 1"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "default:pick_stone",items = {
+	"group:stick 2",
+	"group:stone 3"
+},always_known = false})
+crafting.register_recipe({type = "inv",output = "default:torch 4",items = {
+	"default:coal_lump 1",
+	"group:stick 1"
 },always_known = false})
