@@ -1,3 +1,5 @@
+local S = minetest.get_translator("eduhf")
+
 local num_books=1
 local function book_on_use(itemstack, user)
   -- local player = minetest.get_player_by_name("Yves")
@@ -25,7 +27,6 @@ minetest.register_chatcommand("resetskills", {
 	privs = {},
 	func = function(name, param)
     local unlocked = crafting.get_unlocked(name)
-    print("Thats why: "..dump(unlocked))
     for key, value in pairs(unlocked) do
       print(key)
       print(value)
@@ -33,12 +34,12 @@ minetest.register_chatcommand("resetskills", {
       crafting.lock(name, key)
     end
   end })
-print("done?")
 
 local function register_skill_book(recipe_name, description)
   description = description or ItemStack(recipe_name):get_definition().description
   minetest.register_craftitem("crafting:skill_book_"..num_books, { --..recipe_name:gsub(":", "_"), {
-  	description = "Crafting recipe: "..description,
+  	description = S("Crafting recipe: @1", description),
+    --description = S("Crafting recipe:")..S(description),
   	inventory_image = "default_book_written.png",
   	groups = {book = 1},
   	stack_max = 1,
@@ -48,6 +49,28 @@ local function register_skill_book(recipe_name, description)
   num_books = num_books+1
 end
 
-register_skill_book({"doors:door_wood", "stairs:stair_wood 8","default:ladder_wood 5"}, "Woodworking")
-register_skill_book({"doors:door_wood", "stairs:stair_cobble 8","stairs:slab_stone 6"}, "Stoneworking")
-register_skill_book({"default:axe_stone", "default:pick_stone", "default:shovel_stone", "default:torch 4"}, "Stone Tools")
+register_skill_book({     "doors:door_wood",
+                          "stairs:stair_wood 8",
+                          "default:ladder_wood 5"},
+                          S("Woodworking"))
+
+register_skill_book(    { "stairs:stair_cobble 8",
+                          "stairs:slab_cobble 6"},
+                      S("Stoneworking"))
+
+register_skill_book(    {"default:axe_stone",
+                         "default:pick_stone",
+                         "default:shovel_stone",
+                         "default:torch 4"},
+                      S("Stone Tools"))
+
+register_skill_book(    {"mesecons:wire_00000000_off 4",
+                         "mesecons_lightstone:lightstone_yellow_off 1",
+                         "mesecons_pressureplates:pressure_plate_wood_off 1",
+                         "mesecons_walllever:wall_lever_off 1",
+                         "mesecons_torch:mesecon_torch_on 1",
+                         "mesecons_gates:not_off 1",
+                         "mesecons_gates:and_off 1",
+                         "mesecons_pistons:piston_sticky_off 1"
+                       },
+                      S("Logic Circuits"))

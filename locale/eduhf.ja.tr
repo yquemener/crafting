@@ -1,0 +1,97 @@
+# textdomain: eduhf
+
+Crafting recipe: @1=物の作り方: @1
+Woodworking=木工
+Stoneworking=石工
+Stone Tools=石でできた道具
+Logic Circuits=論理回路
+
+You've unlocked @1=あなたは新しいスキルを身につけました: @1
+
+Coordinates: Longitude: @1, Latitude: @2,  Altitude: @3=緯度:@1, 経度:@2, 高度:@3
+
+
+Treasure Map=宝の地図
+Use the GPS to find the treasure in a cavern.@nIt is located at:@n@n Longitude@=171@n Latitude@=26@n Altitude@=16=GPSを使って、洞窟の中にある宝を見つけよう。@n宝が位置する所は@n@n緯度@=171@n 経度@=26@n 高度@=16
+
+The Lost Tower=失われた塔
+In the middle of a lake lies an old tower.@nIt is located at@n@n Longitude@=-41@n Latitude@=149@n Altitude@=8=湖の真ん中には古い塔があります。みずうみのまんなかにはふるいとうがあります。宝が位置する所は@n@n 緯度@=-41@n 経度@=149@n 高度@=8
+
+The Lost Knowledge=失われた知識
+In an underground cavern, an old civilization left the secret of tools making.@nIt is located at:@n@n Longitude@=-31@n Latitude@=66@n Altitude@=-16@n@nYou may have to dig.=地下空洞では、古い文明が「道具の作り方」の秘密を残しました。@n宝が位置する所は@n@n 緯度@=-31@n 経度@=66@n 高度@=-16
+
+The Cave Of Secrets=秘密の洞窟
+Forgotten knowledge can be found in the ruins of this underground civilization.@nThe entrance to one of their caves is located on@n@n Longitude@=-62@n Latitude@=179@n Altitude@=9@n@n Go there and dig the rocks between the two trees. You will need a code to enter their secrets. The code is 1 0 1 1 1 1 0 0=忘れられた知識がこの地下で栄えた文明の遺跡から見つけられます。@nこの文明が栄えた洞窟の入口が位置する場所は@n@n 緯度@=-62@n 経度@=9@n 高度@=179@nそこへ行き、２本の木の間にある石を掘りましょう。@n彼らの秘密の場所に入るためには、コードが必要です。@nコードは 1 0 1 1 1 1 0 0です。
+
+
+# textdomain: mesecons
+Mesecon=どうせん
+Yellow Lightstone=光のキューブ
+Lever=レバー付きのスイッチ
+Mesecon Torch=電源
+Wooden Pressure Plate=感圧板
+
+# textdomain: default
+Apple=りんご
+Stone Shovel=石のシャベル
+Apple Tree Leaves=りんごの木の葉っぱ
+Apple Tree=りんごの木
+Apple Wood Planks=板
+Dirt=泥
+Grass=草
+Stone Axe=石斧
+Blueberries=ブルーベリー
+Stick=棒
+Wood Planks=板
+Wooden Ladder=木製のはしご
+Stone Pickaxe=石のつるはし
+Coal Lump=石炭のかたまり
+Torch=たいまつ
+
+# textdomain: stairs
+Wooden Stair=木製の階段
+Cobblestone Stair=石の椅子
+
+# textdomain: farming
+Bread=パン
+
+# textdomain: xdecor
+Lantern=ランタン　
+
+# textdomain: flowers
+Brown Mushroom=茶色のキノコ
+Red Mushroom=赤色のキノコ
+
+# textdomain: doors
+Wooden Door=木製のドア
+
+# textdomain: eduhf
+Wire, Switches And Lights=ワイヤースイッチとワイヤー電気
+When a switch is activated, wires touching it light up.@nWhen a light cube is touched by a lit wire, it emits light.=スイッチが作動している時に、(スイッチに)付いているワイヤーは光ります。@n光のキューブ(立方体)がすでに光っているワイヤーで触られると、光が放射します。
+
+Actuators=アクチュエータ
+Doors, pistons, machines, many things can be activated by a lit wire.@nThis lost civilization relied a lot on such machines.=ドア、ピストン、機械など色々なものが光っているワイヤーによって動かせるようになります。この失われた文明はこのような機械にたくさん頼っていました。
+
+EXAMPLES=れい
+GATE@nMECHANISM=もんのしくみ
+SECRET@nEXIT=ひみつのでぐち
+PISTON=ピストン
+
+
+
+Cave Of Secret Logic=秘密の倫理の洞窟
+Logic Gates=論理回路
+Logic gate NOT=論理回路 NOT
+Logic gate AND=論理回路 AND
+
+
+
+This is called a NOT circuit.=これはろんりかいろとよばれます。
+It is an inverter.=これはインバータです。
+If input is on, output is off ,and vice versa.=にゅうりょくがオンになっていて、しゅつりょくがオフになっていたら(ぎゃくもかのう)
+
+
+It is called a AND circuit.=これはアンドかいろといいます。
+Both inputs must be on to light output=ひかりをだすためには、りょうほうのにゅうりょくがひつよう
+A piston pushes a block forward=ピストンはブロックをまえにおします。
+The entrance gate uses 8 pistons=いりぐちは８つのピストンをつかいます。
