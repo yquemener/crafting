@@ -57,11 +57,13 @@ function crafting.get_unlocked(name)
 
 	local retval = unlocked_cache[name]
 	if not retval then
-		retval = minetest.parse_json(player:get_attribute("crafting:unlocked")
-				or "{}")
+		retval = minetest.parse_json(
+			player:get_meta():get("crafting:unlocked") or "{}")
 		unlocked_cache[name] = retval
-
 	end
+
+	assert(retval)
+
 	return retval
 end
 
@@ -69,6 +71,32 @@ if minetest then
 	minetest.register_on_leaveplayer(function(player)
 		unlocked_cache[player:get_player_name()] = nil
 	end)
+end
+
+local function write_json_dictionary(value)
+	if next(value) then
+		return minetest.write_json(value)
+	else
+		return "{}"
+	end
+end
+
+function crafting.lock_all(name)
+	local player = minetest.get_player_by_name(name)
+	if not player then
+		minetest.log("warning", "Crafting doesn't support setting unlocks for offline players")
+		return {}
+	end
+
+	local unlocked = crafting.get_unlocked(name)
+
+	for key, _ in pairs(unlocked) do
+		unlocked[key] = nil
+	end
+
+	unlocked_cache[name] = unlocked
+
+	player:get_meta():set_string("crafting:unlocked", write_json_dictionary(unlocked))
 end
 
 function crafting.unlock(name, output)
@@ -91,34 +119,7 @@ function crafting.unlock(name, output)
 	end
 
 	unlocked_cache[name] = unlocked
-	player:set_attribute("crafting:unlocked", minetest.write_json(unlocked))
-	if minetest.global_exists("sfinv") then
-		sfinv.set_player_inventory_formspec(player)
-	end
-
-end
-
-function crafting.lock(name, output)
-	local player = minetest.get_player_by_name(name)
-	if not player then
-		minetest.log("warning", "Crafting doesn't support setting unlocks for offline players")
-		return {}
-	end
-
-	local unlocked = crafting.get_unlocked(name)
-
-	if type(output) ~= "table" then
-		unlocked[output] = false
-		minetest.chat_send_player(name, "You've locked " .. output)
-	end
-
-	unlocked_cache[name] = unlocked
-	-- player:set_attribute("crafting:unlocked", minetest.write_json(unlocked))
-	player:set_attribute("crafting:unlocked", minetest.write_json(unlocked))
-	if minetest.global_exists("sfinv") then
-		sfinv.set_player_inventory_formspec(player)
-	end
-
+	player:get_meta():set_string("crafting:unlocked", write_json_dictionary(unlocked))
 end
 
 function crafting.get_recipe(id)
@@ -182,6 +183,7 @@ end
 
 function crafting.get_all_for_player(player, type, level)
 	local unlocked = crafting.get_unlocked(player:get_player_name())
+
 	-- Get items hashed
 	local item_hash = {}
 	crafting.set_item_hashes_from_list(player:get_inventory(), "main", item_hash)

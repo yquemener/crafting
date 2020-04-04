@@ -26,13 +26,7 @@ minetest.register_chatcommand("resetskills", {
 	params = "<player>",
 	privs = {},
 	func = function(name, param)
-    local unlocked = crafting.get_unlocked(name)
-    for key, value in pairs(unlocked) do
-      print(key)
-      print(value)
-      print(name)
-      crafting.lock(name, key)
-    end
+    crafting.lock_all(name)
   end })
 
 local function register_skill_book(recipe_name, description)
