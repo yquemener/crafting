@@ -2327,3 +2327,7 @@ crafting.register_recipe({type = "inv",output = "mesecons_pistons:piston_sticky_
   "group:wood 1",
   "default:iron_lump 1"
 },always_known = false})
+
+crafting.register_recipe({type = "furnace",output = "default:steel_ingot",items = {
+	"default:iron_lump 1"
+},always_known = true})
