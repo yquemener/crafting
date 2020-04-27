@@ -2239,7 +2239,7 @@ crafting.register_recipe({type = "inv",output = "default:stick 4",items = {
 },always_known = true})
 
 crafting.register_recipe({type = "inv",output = "default:wood 4",items = {
-	"default:tree 1"
+	"group:tree 1"
 },always_known = true})
 
 

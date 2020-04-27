@@ -15,11 +15,12 @@
 -- License along with this library; if not, write to the Free Software
 -- Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+local S = minetest.get_translator("crafting")
 
 local function get_item_description(name)
 	if name:sub(1, 6) == "group:" then
 		local group = name:sub(7, #name):gsub("%_", " ")
-		return "Any " .. group
+		return S("Any @1", S(group))
 	else
 		local def = minetest.registered_items[name] or {}
 		return def.description or name

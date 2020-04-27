@@ -97,3 +97,9 @@ It is called a AND circuit.=これはアンドかいろといいます。
 Both inputs must be on to light output=ひかりをだすためには、りょうほうのにゅうりょくがひつよう
 A piston pushes a block forward=ピストンはブロックをまえにおします。
 The entrance gate uses 8 pistons=いりぐちは８つのピストンをつかいます。
+
+
+# textdomain: crafting
+Any @1=どんな@1
+tree=木
+wood=板
