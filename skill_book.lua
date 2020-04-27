@@ -2,8 +2,7 @@ local S = minetest.get_translator("eduhf")
 
 local num_books=1
 local function book_on_use(itemstack, user)
-  -- local player = minetest.get_player_by_name("Yves")
-  -- player:set_attribute("crafting:unlocked", "{}")
+    -- player:set_attribute("crafting:unlocked", "{}")
 
   local name = user:get_player_name()
   local unlocked = crafting.get_unlocked(name)

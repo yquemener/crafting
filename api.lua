@@ -111,11 +111,13 @@ function crafting.unlock(name, output)
 	if type(output) == "table" then
 		for i=1, #output do
 			unlocked[output[i]] = true
-			minetest.chat_send_player(name, S("You've unlocked @1", output[i]))
+			local desc = ItemStack(output[i]):get_definition().description
+			minetest.chat_send_player(name, S("You've learned how to build @1", desc))
 		end
 	else
 		unlocked[output] = true
-		minetest.chat_send_player(name, S("You've unlocked @1", output[i]))
+		local desc = ItemStack(output):get_definition().description
+		minetest.chat_send_player(name, S("You've learned how to build @1", desc))
 	end
 
 	unlocked_cache[name] = unlocked

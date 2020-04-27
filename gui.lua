@@ -78,9 +78,9 @@ function crafting.make_result_selector(player, type, level, size, context)
 
 
 	formspec[#formspec + 1] = "label[0,-0.25;"
-	formspec[#formspec + 1] = minetest.formspec_escape("Page: " ..
+	--[[ formspec[#formspec + 1] = minetest.formspec_escape("Page: " ..
 			page .. "/" .. max_pages ..
-			" | Unlocked: " .. #full_recipes .. " / " .. #crafting.recipes[type])
+			" | Unlocked: " .. #full_recipes .. " / " .. #crafting.recipes[type])]]--
 	formspec[#formspec + 1] = "]"
 
 	local x = 0
