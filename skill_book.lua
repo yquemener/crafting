@@ -44,7 +44,10 @@ end
 
 register_skill_book({     "doors:door_wood",
                           "stairs:stair_wood 8",
-                          "default:ladder_wood 5"},
+                          "default:ladder_wood 5",
+                          "stairs:slab_wood 6",
+                          "default:fence_rail_wood 16",
+                          "default:torch 4"},
                           S("Woodworking"))
 
 register_skill_book(    { "stairs:stair_cobble 8",
@@ -53,8 +56,7 @@ register_skill_book(    { "stairs:stair_cobble 8",
 
 register_skill_book(    {"default:axe_stone",
                          "default:pick_stone",
-                         "default:shovel_stone",
-                         "default:torch 4"},
+                         "default:shovel_stone"},
                       S("Stone Tools"))
 
 register_skill_book(    {"mesecons:wire_00000000_off 4",

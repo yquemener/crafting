@@ -2331,3 +2331,11 @@ crafting.register_recipe({type = "inv",output = "mesecons_pistons:piston_sticky_
 crafting.register_recipe({type = "furnace",output = "default:steel_ingot",items = {
 	"default:iron_lump 1"
 },always_known = true})
+
+crafting.register_recipe({type = "inv",output = "stairs:slab_wood 6",items = {
+	"default:wood 3"
+},always_known = false})
+
+crafting.register_recipe({type = "inv",output = "default:fence_rail_wood 16",items = {
+	"default:wood 4"
+},always_known = false})
