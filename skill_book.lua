@@ -46,7 +46,7 @@ register_skill_book({     "doors:door_wood",
                           "stairs:stair_wood 8",
                           "default:ladder_wood 5",
                           "stairs:slab_wood 6",
-                          "default:fence_rail_wood 16",
+                          "default:fence_wood 4",
                           "default:torch 4"},
                           S("Woodworking"))
 

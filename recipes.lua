@@ -2336,6 +2336,7 @@ crafting.register_recipe({type = "inv",output = "stairs:slab_wood 6",items = {
 	"default:wood 3"
 },always_known = false})
 
-crafting.register_recipe({type = "inv",output = "default:fence_rail_wood 16",items = {
+crafting.register_recipe({type = "inv",output = "default:fence_wood 4",items = {
+	"group:stick 2",
 	"default:wood 4"
 },always_known = false})
